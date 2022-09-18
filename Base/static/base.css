@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(26, 228, 141);
+    margin: 0px;
+}
+nav{
+    overflow: hidden;
+    background-color: rgb(197, 211, 89);
+    height: 50px;
+    padding-bottom: 10px;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+div  a{
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  position: relative;
+  bottom: 60px;
+  float: inline-end;
+  font-size: 17px;
+ 
+
+}
+nav a:hover{
+    background-color: white;
+    color: black;
+}
+
