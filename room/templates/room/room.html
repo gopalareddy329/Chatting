@@ -1,0 +1,14 @@
+{% extends 'Base/base.html' %}
+
+{% block title %} Room | {% endblock title%}
+
+{% block name %}Rooms {% endblock name%}
+{% block content %}
+
+    <h1 align="center">Rooms</h1>
+
+    {% for room in rooms %}
+            <label>{{room.name}}</label>
+            <button ><a href="{% url 'chat' room.slug %}">Join</a></button><br>
+            {% endfor %}
+{% endblock content %}

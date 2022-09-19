@@ -3,9 +3,8 @@
 {% extends 'Base/base.html' %}
 
 {% block title %}Login {% endblock title%}
-<style>
+{% block name %}Login {% endblock name%}
 
-</style>
 {% block content %}
     <form method="POST">
         {% csrf_token %}

@@ -1,0 +1,14 @@
+{% extends 'Base/base.html' %}
+
+{% block title %} Chat | {% endblock title%}
+
+{% block name %}Chat {% endblock name%}
+{% block content %}
+
+    <h1 align="center">Chat</h1>
+        {{content.name}}
+        <form>
+        <input type="text" name="content" id="content" placeholder="Enter your message">
+        <button type="submit">Submit</button>
+    </form>
+{% endblock content %}
