@@ -4,4 +4,7 @@
 {% block name %}Chatting{% endblock name%}
 {% block content %}
     <h1 align="center">Chatting</h1>
+    {% if request.user.is_authenticated %}
+    <button style=" position:absolute;left: 40%; top: 40%; width: 20%; height: 5%; background-color: aquamarine;"><a href="/rooms">Enter to global chat</a></button>
+    {% endif %}
 {% endblock content %}

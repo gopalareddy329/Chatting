@@ -3,12 +3,35 @@
 {% block title %} Chat | {% endblock title%}
 
 {% block name %}Chat {% endblock name%}
-{% block content %}
 
-    <h1 align="center">Chat</h1>
-        {{content.name}}
-        <form>
-        <input type="text" name="content" id="content" placeholder="Enter your message">
-        <button type="submit">Submit</button>
-    </form>
+{% block content %}
+<style>
+    .container{
+            display:grid;
+            grid-template-columns: 2fr 2fr;
+    }
+</style>
+    <h1 align="center">{{content.name}}</h1>
+    <div class="container">
+            <div>
+                {% for i in participents %}
+                    {{i.username}}<br>
+                {% endfor %}
+            </div>
+            <div style="border: 1px solid black; width: 35%; padding-left: 10px;">
+                    {% for item in messages %}
+                    <p  style="background-color: rgb(18, 195, 5); width:fit-content; padding: 9px; border-radius: 10px; text-align:initial;padding-bottom: 2%;"><br>@{{item.host}} {{item.created|timesince}} ago<br>
+                        {{item.body}}
+                    </p>
+
+                    {% endfor %}
+                
+                    <form method="post" >
+                        {% csrf_token %}
+                        <input style="background-color:transparent; border:None; border-bottom:1px solid black ; width: 90%;" type="text" name="message" id="message" placeholder="Enter your message" ><br>
+                        <button style="width: 90%; padding: 5px; border-radius: 10px; " type="submit">Submit</button><br><br>
+                    </form>
+            </div>
+    </div>
+    <br><br>
 {% endblock content %}
